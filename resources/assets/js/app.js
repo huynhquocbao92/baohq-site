@@ -21,11 +21,14 @@ const app = new Vue({
     el: '#app'
 });
  */
+require('./bootstrap');
 
  import Vue from 'vue'
  import VueRouter from 'vue-router'
- import Hompage from './components/Homepage'
+ import Homepage from './components/Homepage'
  import Read from './components/Read'
+ import Create from './components/Create'
+ import Update from './components/Update'
 
  Vue.use(VueRouter)
 
@@ -38,11 +41,23 @@ const app = new Vue({
             component: Read,
             props: true
         },
+        {
+            path: '/admin/create',
+            name: 'create',
+            component: Create,
+            props: true
+        },
+        {
+            path: '/admin/update',
+            name: 'update',
+            component: Update,
+            props: true
+        }
     ],
  });
 
  const app = new Vue({
     el: '#app',
     router,
-    components: { Hompage },
+    components: { Homepage },
  });

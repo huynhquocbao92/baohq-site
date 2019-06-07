@@ -7,9 +7,9 @@
                 <hr>
                 <ul>
                     <li>
-                        <route-link :to="{ name: 'create', params: {userId} }">
+                        <router-link :to="{ name: 'create', params: {userId} }">
                             New Post
-                        </route-link>
+                        </router-link>
                     </li>
                 </ul> 
             </section>

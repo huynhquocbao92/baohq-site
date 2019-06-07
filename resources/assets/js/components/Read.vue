@@ -2,11 +2,11 @@
     <div id="posts">
         <p class="border p-3" v-for="post in posts">
             {{ post.title }}
-            <route-link :to="{ name: 'update', params: {postId: post.id} }">
+            <router-link :to="{ name: 'update', params: {postId: post.id} }">
                 <button type="button" class="p-1 mx-3 float-right btn btn-light">
                     Update
                 </button>
-            </route-link>
+            </router-link>
             <button type="button" @click="deletePost(post.id)" class="p-l mx-3 float-right btn btn-danger">
                 Delete
             </button>
@@ -31,7 +31,7 @@ export default {
     },
     methods: {
         getPosts(address) {
-            axios.get(address ? address : "api/posts").then(response => {
+            axios.get(address ? address : "/api/posts").then(response => {
                 this.posts = response.data.data;
                 this.prev = response.data.links.prev;
                 this.next = response.data.links.next;
@@ -44,5 +44,5 @@ export default {
             this.getPosts(address)
         }
     }
-}
+};
 </script>
