@@ -14,17 +14,12 @@
                 <hr>
                 <p class="lead">{{ $post->body }}</p>
                 <hr>
-                <div class="card my-4">
-                    <h5 class="card-header">Leave a Comment:</h5>
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <textarea class="form-control" rows="4"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div>
+                
+                @auth
+                    <Comments :post-id='@json($post->id)'
+                    :user-name='@json(auth()->user()->name)'>
+                    </Comments>
+                @endauth
             </div>
         </div>
     </div>

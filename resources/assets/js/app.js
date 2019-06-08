@@ -29,6 +29,7 @@ require('./bootstrap');
  import Read from './components/Read'
  import Create from './components/Create'
  import Update from './components/Update'
+ import Comments from './components/Comments'
 
  Vue.use(VueRouter)
 
@@ -59,5 +60,5 @@ require('./bootstrap');
  const app = new Vue({
     el: '#app',
     router,
-    components: { Homepage },
+    components: { Homepage, Comments },
  });
