@@ -70,7 +70,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return PostResource($post);
+        return new PostResource($post);
     }
 
     /**
